@@ -1,63 +1,32 @@
-import 'dart:io';
-
 void main() {
-  int health = 100;
-  bool hasKey = false;
+  String name = "Айбек";
+  String status = "студент";
 
-  print("=== ТЕКСТОВЫЙ КВЕСТ ===");
-  print("Вы проснулись в таинственном замке.");
-  print("1. Пойти в комнату");
-  print("2. Выйти из замка");
+  if (status == "студент" || status == "ученик") {
+    print("Имя: $name | Статус: Учащийся");
+  } else if (status == "рабочий" || status == "клерк") {
+    print("Имя: $name | Статус: Работающий специалист");
+  } else {
+    print("Имя: $name | Статус: $status");
+  }
 
-  String? input = stdin.readLineSync();
+  double totalAmount = 3000;
+  double discount = 25;
+  double finalPrice = totalAmount - (totalAmount * discount / 100);
 
-  switch (input) {
-    case "1":
-      print("Вы вошли в комнату.");
-      print("1. Открыть сундук");
-      print("2. Осмотреть комнату");
+  print("Исходная сумма покупки: $totalAmount сом.");
+  print("Ваша персональная скидка: $discount%");
+  print("Сумма к оплате с учетом скидки: $finalPrice сом.");
 
-      String? choice = stdin.readLineSync();
+  int age = 17;
+  bool hasInvitation = true;
+  bool isBlacklisted = false;
 
-      if (choice == "1") {
-        print("Вы нашли ключ!");
-        hasKey = true;
+  bool canEnter = (age >= 18 || hasInvitation) && !isBlacklisted;
 
-        print("Перед вами дверь.");
-        print("1. Открыть дверь");
-        print("2. Остаться");
-
-        String? doorChoice = stdin.readLineSync();
-
-        if (doorChoice == "1") {
-          if (hasKey && health >= 50) {
-            print("Вы открыли дверь ключом!");
-            print("Поздравляем! Вы прошли квест!");
-          } else {
-            print("Вы не можете открыть дверь.");
-          }
-        } else if (doorChoice == "2") {
-          print("Вы решили остаться в комнате.");
-        } else {
-          print("Неверный выбор.");
-        }
-      } else if (choice == "2") {
-        print("Вы осмотрели комнату, но ключ не нашли.");
-      } else {
-        print("Такого варианта нет.");
-      }
-      break;
-
-    case "2":
-      if (health >= 50) {
-        print("Вы вышли из замка.");
-        print("Квест завершен.");
-      } else {
-        print("Вы слишком слабы, чтобы выйти.");
-      }
-      break;
-
-    default:
-      print("Ошибка: выберите 1 или 2.");
+  if (canEnter) {
+    print("Доступ разрешен.");
+  } else {
+    print("Доступ заблокирован.");
   }
 }
