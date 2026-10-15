@@ -1,32 +1,35 @@
 void main() {
-  String name = "Айбек";
-  String status = "студент";
+  String token = "latte";
 
-  if (status == "студент" || status == "ученик") {
-    print("Имя: $name | Статус: Учащийся");
-  } else if (status == "рабочий" || status == "клерк") {
-    print("Имя: $name | Статус: Работающий специалист");
-  } else {
-    print("Имя: $name | Статус: $status");
+  switch (token) {
+    case "expresso":
+    print("Ваш эспрессо готов.");
+      break;
+    case "cappuccino":
+      print("Ваш капучино готов.");
+      break;
+    case "latte":
+      print("Ваш латте готов.");
+      break;
+    default:
+      print("Неизвестный жетон.");
   }
 
-  double totalAmount = 3000;
-  double discount = 25;
-  double finalPrice = totalAmount - (totalAmount * discount / 100);
+  String day = "суббота";
 
-  print("Исходная сумма покупки: $totalAmount сом.");
-  print("Ваша персональная скидка: $discount%");
-  print("Сумма к оплате с учетом скидки: $finalPrice сом.");
-
-  int age = 17;
-  bool hasInvitation = true;
-  bool isBlacklisted = false;
-
-  bool canEnter = (age >= 18 || hasInvitation) && !isBlacklisted;
-
-  if (canEnter) {
-    print("Доступ разрешен.");
-  } else {
-    print("Доступ заблокирован.");
+  switch (day) {
+    case "понедельник":
+    case "вторник":
+    case "среда":
+    case "четверг":
+    case "пятница":
+      print("Это рабочий день.");
+      break;
+    case "суббота":
+    case "воскресенье":
+      print("Это выходной день.");
+      break;
+    default:
+      print("Неверно указан день недели.");
   }
 }
