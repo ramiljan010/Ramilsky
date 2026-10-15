@@ -1,17 +1,17 @@
 void main() {
-  String name = "Рамиль";
-  String city = "Бишкек";
-  String language = "Dart";
-  print("$name из города $city, уважает $language — отличный выбор!");
+  for (int i = 1; i <= 10; i++) {
+    print(i);
+  }
+  print("Кто не спрятался — я не виноват!");
 
-  int currentYear = int.parse("2026");
-  int birthYear = int.parse("2004");
-  int age = currentYear - birthYear;
-  print("Ваш возраст: $age лет.");
+  for (int i = 5; i >= 1; i--) {
+    print(i);
+  }
+  print("Поехали!");
 
-  double num1 = double.parse("12.5");
-  double num2 = double.parse("4");
-  print("Результат сложения: ${num1 + num2}");
-  print("Результат вычитания: ${num1 - num2}");
-  print("Результат умножения: ${num1 * num2}");
+  int totalPieces = 8;
+  for (int i = 1; i <= totalPieces; i++) {
+    int remaining = totalPieces - i;
+    print("Я съел кусочек номер $i. Осталось кусочков: $remaining");
+  }
 }
