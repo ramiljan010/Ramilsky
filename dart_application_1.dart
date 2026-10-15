@@ -1,35 +1,17 @@
 void main() {
-  String token = "latte";
+  String name = "Рамиль";
+  String city = "Бишкек";
+  String language = "Dart";
+  print("$name из города $city, уважает $language — отличный выбор!");
 
-  switch (token) {
-    case "expresso":
-    print("Ваш эспрессо готов.");
-      break;
-    case "cappuccino":
-      print("Ваш капучино готов.");
-      break;
-    case "latte":
-      print("Ваш латте готов.");
-      break;
-    default:
-      print("Неизвестный жетон.");
-  }
+  int currentYear = int.parse("2026");
+  int birthYear = int.parse("2004");
+  int age = currentYear - birthYear;
+  print("Ваш возраст: $age лет.");
 
-  String day = "суббота";
-
-  switch (day) {
-    case "понедельник":
-    case "вторник":
-    case "среда":
-    case "четверг":
-    case "пятница":
-      print("Это рабочий день.");
-      break;
-    case "суббота":
-    case "воскресенье":
-      print("Это выходной день.");
-      break;
-    default:
-      print("Неверно указан день недели.");
-  }
+  double num1 = double.parse("12.5");
+  double num2 = double.parse("4");
+  print("Результат сложения: ${num1 + num2}");
+  print("Результат вычитания: ${num1 - num2}");
+  print("Результат умножения: ${num1 * num2}");
 }
